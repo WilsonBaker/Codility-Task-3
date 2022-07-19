@@ -1,5 +1,6 @@
 ﻿using Codility_Task_3.Drivers;
 using Codility_Task_3.UI.Features.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         }
 
         [Given("User visits home page")]
+        [When("User visits home page")]
         public void UserVisitsHomePage()
         {
             _driver = seleniumDriver.Setup();
@@ -45,9 +47,10 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         }
 
         [Then(@"User should see successful login title with username '(.*)'")]
-        public void ThenUserShouldSeeSuccessfulLoginTitleWithUsername(string p0)
+        public void ThenUserShouldSeeSuccessfulLoginTitleWithUsername(string username)
         {
-            ScenarioContext.Current.Pending();
+            var result = homePageObject.checkLoginTitleIsDisplayedWithUsername(username);
+            Assert.IsTrue(result);
         }
 
     }

@@ -20,6 +20,12 @@ namespace Codility_Task_3.UI.Features.Pages
         [FindsBy(How = How.Id, Using = "warrior")]
         private IWebElement submitBtn { get; set; }
 
+        [FindsBy(How = How.Id, Using = "login_title")]
+        private IWebElement loginTitle { get; set; }
+
+        [FindsBy(How = How.Id, Using = "user_txt")]
+        private IWebElement loginTitleUsername { get; set; }
+
         private readonly IWebDriver _driver;
         public HomePage(IWebDriver driver)
         {
@@ -45,6 +51,17 @@ namespace Codility_Task_3.UI.Features.Pages
         public void submitDetails()
         {
             submitBtn.Click();
+        }
+
+        public bool checkLoginTitleIsDisplayedWithUsername(string givenUsername)
+        {
+            if (loginTitle.Displayed == true && loginTitleUsername.Text == givenUsername)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }
