@@ -100,6 +100,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.When("User logs in with username \'WilsonBak\' and password \'P@ssword1234\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 9
+ testRunner.And("User submits the details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

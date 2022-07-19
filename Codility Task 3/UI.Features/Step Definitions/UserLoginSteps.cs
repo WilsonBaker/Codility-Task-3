@@ -35,6 +35,13 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         {
             homePageObject.clickLoginBtn();
             System.Threading.Thread.Sleep(2000);
+            homePageObject.enterUsernameAndPassword(username, password);
+        }
+
+        [When("User submits the details")]
+        public void UserSubmitsDetails()
+        {
+            homePageObject.submitDetails();
         }
 
     }
