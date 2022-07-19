@@ -12,56 +12,68 @@ namespace Codility_Task_3.UI.Features.Pages
         private IWebElement LoginBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "worrior_username")]
-        private IWebElement username { get; set; }
+        private IWebElement Username { get; set; }
 
         [FindsBy(How = How.Id, Using = "worrior_pwd")]
-        private IWebElement password { get; set; }
+        private IWebElement Password { get; set; }
 
         [FindsBy(How = How.Id, Using = "warrior")]
-        private IWebElement submitBtn { get; set; }
+        private IWebElement SubmitBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "login_title")]
-        private IWebElement loginTitle { get; set; }
+        private IWebElement LoginTitle { get; set; }
 
         [FindsBy(How = How.Id, Using = "user_txt")]
-        private IWebElement loginTitleUsername { get; set; }
+        private IWebElement LoginTitleUsername { get; set; }
+
+        [FindsBy(How = How.Id, Using = "rego")]
+        private IWebElement RegisterBtn { get; set; }
+
+
 
         private readonly IWebDriver _driver;
+
+
         public HomePage(IWebDriver driver)
         {
             _driver = driver;
             PageFactory.InitElements(_driver, this);
         }
 
-        public void clickLoginBtn()
+        public void ClickLoginBtn()
         {
             LoginBtn.Click();
         }
 
-        public void enterUsernameAndPassword(string givenUsername, string givenPassword)
+        public void EnterUsernameAndPassword(string givenUsername, string givenPassword)
         {
             // Clear and then enter text
-            username.Clear();
-            username.SendKeys(givenUsername);
+            Username.Clear();
+            Username.SendKeys(givenUsername);
 
-            password.Clear();
-            password.SendKeys(givenPassword);
+            Password.Clear();
+            Password.SendKeys(givenPassword);
         }
 
-        public void submitDetails()
+        public void SubmitDetails()
         {
-            submitBtn.Click();
+            SubmitBtn.Click();
         }
 
-        public bool checkLoginTitleIsDisplayedWithUsername(string givenUsername)
+        public bool CheckLoginTitleIsDisplayedWithUsername(string givenUsername)
         {
-            if (loginTitle.Displayed == true && loginTitleUsername.Text == givenUsername)
+            if (LoginTitle.Displayed == true && LoginTitleUsername.Text == givenUsername)
             {
                 return true;
             } else
             {
                 return false;
             }
+        }
+
+        public void EnterUsernameAndPasswordRegistration(string givenUsername, string givenPassword)
+        {
+
         }
     }
 }

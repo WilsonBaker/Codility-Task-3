@@ -35,21 +35,21 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         [When("User logs in with username '(.*)' and password '(.*)'")]
         public void UserClicksLoginAndEntersDetails(string username, string password)
         {
-            homePageObject.clickLoginBtn();
+            homePageObject.ClickLoginBtn();
             System.Threading.Thread.Sleep(2000);
-            homePageObject.enterUsernameAndPassword(username, password);
+            homePageObject.EnterUsernameAndPassword(username, password);
         }
 
         [When("User submits the details")]
         public void UserSubmitsDetails()
         {
-            homePageObject.submitDetails();
+            homePageObject.SubmitDetails();
         }
 
         [Then(@"User should see successful login title with username '(.*)'")]
         public void ThenUserShouldSeeSuccessfulLoginTitleWithUsername(string username)
         {
-            var result = homePageObject.checkLoginTitleIsDisplayedWithUsername(username);
+            var result = homePageObject.CheckLoginTitleIsDisplayedWithUsername(username);
             Assert.IsTrue(result);
         }
 
