@@ -97,6 +97,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("User visits home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 8
+ testRunner.When("User logs in with username \'WilsonBak\' and password \'P@ssword1234\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
