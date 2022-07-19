@@ -35,7 +35,6 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         [When("User logs in with username '(.*)' and password '(.*)'")]
         public void UserClicksLoginAndEntersDetails(string username, string password)
         {
-            homePageObject.ClickLoginBtn();
             System.Threading.Thread.Sleep(2000);
             homePageObject.EnterUsernameAndPassword(username, password);
         }
@@ -56,8 +55,19 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         [When(@"User registers with username '(.*)' and password '(.*)'")]
         public void WhenUserRegistersWithUsernameAndPassword(string username, string password)
         {
-            ScenarioContext.Current.Pending();
+            homePageObject.ClickRegisterButton();
+            System.Threading.Thread.Sleep(2000);
+            homePageObject.EnterUsernameAndPasswordRegistration(username, password);
+            homePageObject.ClickSignUpButton();
+            System.Threading.Thread.Sleep(2000);
         }
+
+        [Given(@"User clicks login button")]
+        public void GivenUserClicksLoginButton()
+        {
+            homePageObject.ClickLoginBtn();
+        }
+
 
 
     }

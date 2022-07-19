@@ -29,6 +29,18 @@ namespace Codility_Task_3.UI.Features.Pages
         [FindsBy(How = How.Id, Using = "rego")]
         private IWebElement RegisterBtn { get; set; }
 
+        [FindsBy(How = How.Id, Using = "uname")]
+        private IWebElement RegisterUsername { get; set; }
+
+        [FindsBy(How = How.Id, Using = "pwd")]
+        private IWebElement RegisterPassword { get; set; }
+
+        [FindsBy(How = How.Id, Using = "psw-repeat")]
+        private IWebElement RegisterPasswordRepeat { get; set; }
+
+        [FindsBy(How = How.Id, Using = "signupbtn")]
+        private IWebElement SignUpButton { get; set; }
+
 
 
         private readonly IWebDriver _driver;
@@ -62,6 +74,7 @@ namespace Codility_Task_3.UI.Features.Pages
 
         public bool CheckLoginTitleIsDisplayedWithUsername(string givenUsername)
         {
+            // Check that login title has been displayed and also that the username text is correct
             if (LoginTitle.Displayed == true && LoginTitleUsername.Text == givenUsername)
             {
                 return true;
@@ -71,9 +84,27 @@ namespace Codility_Task_3.UI.Features.Pages
             }
         }
 
+        public void ClickRegisterButton()
+        {
+            RegisterBtn.Click();
+        }
+
+        public void ClickSignUpButton()
+        {
+            SignUpButton.Click();
+        }
+
         public void EnterUsernameAndPasswordRegistration(string givenUsername, string givenPassword)
         {
+            // Clear and then enter text
+            RegisterUsername.Clear();
+            RegisterUsername.SendKeys(givenUsername);
 
+            RegisterPassword.Clear();
+            RegisterPassword.SendKeys(givenPassword);
+
+            RegisterPasswordRepeat.Clear();
+            RegisterPasswordRepeat.SendKeys(givenPassword);
         }
     }
 }
