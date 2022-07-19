@@ -44,5 +44,11 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             homePageObject.submitDetails();
         }
 
+        [Then(@"User should see successful login title with username '(.*)'")]
+        public void ThenUserShouldSeeSuccessfulLoginTitleWithUsername(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
