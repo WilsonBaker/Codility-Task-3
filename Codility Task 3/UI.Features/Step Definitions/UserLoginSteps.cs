@@ -77,10 +77,18 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         }
 
         [Then(@"User sees register error '(.*)'")]
-        public void ThenUserSeesRegisterError(string p0)
+        public void ThenUserSeesRegisterError(string errorMessage)
         {
-            ScenarioContext.Current.Pending();
+            System.Threading.Thread.Sleep(2000);
+            var result = homePageObject.CheckRegisterErrorDisplayed(errorMessage);
+            Assert.IsTrue(result);
         }
 
+        [Given(@"User clicks start game button")]
+        [When(@"User clicks start game button")]
+        public void UserClicksStartGameButton()
+        {
+            homePageObject.ClickStartGameButton();
+        }
     }
 }

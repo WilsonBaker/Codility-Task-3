@@ -134,7 +134,8 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("User visits home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When("User registers with username \'TestUser5\' and password \'Password123\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User registers with username \'TestUser5\' and password \'Password123\' and repeat pa" +
+                        "ssword \'Password123\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
  testRunner.And("User logs in with username \'TestUser5\' and password \'Password123\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -180,6 +181,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 25
  testRunner.Then("User sees login error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Register - User tries to register with unmatched password and sees correct error " +
+            "message")]
+        public void Register_UserTriesToRegisterWithUnmatchedPasswordAndSeesCorrectErrorMessage()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register - User tries to register with unmatched password and sees correct error " +
+                    "message", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 27
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 28
+ testRunner.Given("User visits home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 29
+ testRunner.When("User registers with username \'TestUser6\' and password \'Password123\' and repeat pa" +
+                        "ssword \'Password321\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+ testRunner.Then("User sees register error \'Passwords do not match\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

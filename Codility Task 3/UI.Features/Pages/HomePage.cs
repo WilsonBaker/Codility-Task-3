@@ -39,10 +39,16 @@ namespace Codility_Task_3.UI.Features.Pages
         private IWebElement RegisterPasswordRepeat { get; set; }
 
         [FindsBy(How = How.Id, Using = "signupbtn")]
-        private IWebElement SignUpButton { get; set; }
+        private IWebElement SignUpBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "login_popup")]
         private IWebElement LoginErrorPopup { get; set; }
+
+        [FindsBy(How = How.Id, Using = "popup")]
+        private IWebElement RegisterErrorPopup { get; set; }
+
+        [FindsBy(How = How.Id, Using = "start")]
+        private IWebElement StartGameBtn { get; set; }
 
 
         private readonly IWebDriver _driver;
@@ -93,7 +99,12 @@ namespace Codility_Task_3.UI.Features.Pages
 
         public void ClickSignUpButton()
         {
-            SignUpButton.Click();
+            SignUpBtn.Click();
+        }
+
+        public void ClickStartGameButton()
+        {
+            StartGameBtn.Click();
         }
 
         public void EnterUsernameAndPasswordRegistration(string givenUsername, string givenPassword, string repeatedPassword)
@@ -112,6 +123,18 @@ namespace Codility_Task_3.UI.Features.Pages
         public bool CheckLoginErrorDisplayed()
         {
             if (LoginErrorPopup.Displayed == true && LoginErrorPopup.Text == "Wrong username or password")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckRegisterErrorDisplayed(string errorMessage)
+        {
+            if (RegisterErrorPopup.Displayed == true && RegisterErrorPopup.Text == errorMessage)
             {
                 return true;
             }
