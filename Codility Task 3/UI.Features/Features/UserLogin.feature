@@ -21,4 +21,5 @@ Scenario: Login - Try to login with invalid credentials and see correct error me
 	Given User visits home page
 	And User clicks login button
 	When User logs in with username 'Invalid' and password 'FakePwd'
+	And User submits the details
 	Then User sees login error

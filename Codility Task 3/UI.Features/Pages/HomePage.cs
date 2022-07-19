@@ -41,6 +41,8 @@ namespace Codility_Task_3.UI.Features.Pages
         [FindsBy(How = How.Id, Using = "signupbtn")]
         private IWebElement SignUpButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "login_popup")]
+        private IWebElement LoginErrorPopup { get; set; }
 
 
         private readonly IWebDriver _driver;
@@ -105,6 +107,18 @@ namespace Codility_Task_3.UI.Features.Pages
 
             RegisterPasswordRepeat.Clear();
             RegisterPasswordRepeat.SendKeys(givenPassword);
+        }
+
+        public bool CheckLoginErrorDisplayed()
+        {
+            if (LoginErrorPopup.Displayed == true && LoginErrorPopup.Text == "Wrong username or password")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -71,7 +71,9 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
         [Then(@"User sees login error")]
         public void ThenUserSeesLoginError()
         {
-            ScenarioContext.Current.Pending();
+            System.Threading.Thread.Sleep(2000);
+            var result = homePageObject.CheckLoginErrorDisplayed();
+            Assert.IsTrue(result);
         }
     }
 }
