@@ -17,12 +17,10 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.3.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="103.0.5060.5300" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
-    <PackageReference Include="SpecRun.SpecFlow" Version="3.9.31" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UI.Features\Features\" />
-    <Folder Include="UI.Features\Step Definitions\" />
     <Folder Include="UI.Features\Pages\" />
   </ItemGroup>
 

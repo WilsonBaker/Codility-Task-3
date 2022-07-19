@@ -21,9 +21,8 @@ namespace Codility_Task_3.Drivers
 
         public IWebDriver Setup()
         {
-            var chromeOptions = new ChromeOptions();
 
-            driver = new RemoteWebDriver(new Uri("https://responsivefight.herokuapp.com/"), chromeOptions.ToCapabilities());
+            driver = new ChromeDriver();
 
             _scenarioContext.Set(driver, "WebDriver");
 
