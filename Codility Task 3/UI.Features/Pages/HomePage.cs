@@ -96,7 +96,7 @@ namespace Codility_Task_3.UI.Features.Pages
             SignUpButton.Click();
         }
 
-        public void EnterUsernameAndPasswordRegistration(string givenUsername, string givenPassword)
+        public void EnterUsernameAndPasswordRegistration(string givenUsername, string givenPassword, string repeatedPassword)
         {
             // Clear and then enter text
             RegisterUsername.Clear();
@@ -106,7 +106,7 @@ namespace Codility_Task_3.UI.Features.Pages
             RegisterPassword.SendKeys(givenPassword);
 
             RegisterPasswordRepeat.Clear();
-            RegisterPasswordRepeat.SendKeys(givenPassword);
+            RegisterPasswordRepeat.SendKeys(repeatedPassword);
         }
 
         public bool CheckLoginErrorDisplayed()

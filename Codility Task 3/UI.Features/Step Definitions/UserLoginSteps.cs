@@ -52,12 +52,12 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             Assert.IsTrue(result);
         }
 
-        [When(@"User registers with username '(.*)' and password '(.*)'")]
-        public void WhenUserRegistersWithUsernameAndPassword(string username, string password)
+        [When(@"User registers with username '(.*)' and password '(.*)' and repeat password '(.*)'")]
+        public void WhenUserRegistersWithUsernameAndPassword(string username, string password, string repeatPassword)
         {
             homePageObject.ClickRegisterButton();
             System.Threading.Thread.Sleep(2000);
-            homePageObject.EnterUsernameAndPasswordRegistration(username, password);
+            homePageObject.EnterUsernameAndPasswordRegistration(username, password, repeatPassword);
             homePageObject.ClickSignUpButton();
             System.Threading.Thread.Sleep(2000);
         }
@@ -75,5 +75,12 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             var result = homePageObject.CheckLoginErrorDisplayed();
             Assert.IsTrue(result);
         }
+
+        [Then(@"User sees register error '(.*)'")]
+        public void ThenUserSeesRegisterError(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
