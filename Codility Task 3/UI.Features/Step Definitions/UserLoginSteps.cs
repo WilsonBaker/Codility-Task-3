@@ -53,5 +53,12 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             Assert.IsTrue(result);
         }
 
+        [When(@"User registers with username '(.*)' and password '(.*)'")]
+        public void WhenUserRegistersWithUsernameAndPassword(string username, string password)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+
     }
 }
