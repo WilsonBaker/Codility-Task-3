@@ -68,7 +68,10 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             homePageObject.ClickLoginBtn();
         }
 
-
-
+        [Then(@"User sees login error")]
+        public void ThenUserSeesLoginError()
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
