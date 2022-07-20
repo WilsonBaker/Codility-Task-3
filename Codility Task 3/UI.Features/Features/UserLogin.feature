@@ -1,6 +1,6 @@
 ﻿@UIRegression
 Feature: UserLogin
-	Simple calculator for adding two numbers
+	Covers user creation and login on the home page https://responsivefight.herokuapp.com/
 
 @UserLoginUI
 Scenario: Login - Login with existing valid username and password
