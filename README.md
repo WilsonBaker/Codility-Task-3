@@ -36,3 +36,8 @@ To run the test suite you can just go to the collection and click the ***Run*** 
 ![image](https://user-images.githubusercontent.com/49139851/180355711-097c9434-73ac-436e-8d4e-3a31a576fad7.png)
 
 The tests are made to run in the exact order they're in for the collection. So if you want to play with each test by themsleves you may have to adjust the request body.
+
+It's also important that you are running the collection under the correct environment. You can change the environment using this dropdown menu in the top right of the screen:
+
+![image](https://user-images.githubusercontent.com/49139851/180356866-0eb78e2e-f307-43bb-8ebf-a5f1cba63ab2.png)
+
