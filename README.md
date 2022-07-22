@@ -19,7 +19,7 @@ Because some of the tests deal with user creation (and you cannot create a user 
 ![image](https://user-images.githubusercontent.com/49139851/180346829-4eccb0c1-574d-4ddc-a0ca-45a8196e52be.png)
 
 ## API Automation
-To run the API automation you will need to first download [Postman](https://www.postman.com/downloads/). Then you can import the Postman JSON files which are inside the ***Postman*** folder by choosing this option in the top right:
+To run the API automation you will need to first download [Postman](https://www.postman.com/downloads/). Then you can import the Postman JSON files which are inside the ***Postman*** folder by choosing this option in the top left:
 
 ![image](https://user-images.githubusercontent.com/49139851/180354303-1c752a46-d369-49d4-a5ed-9c4a693a1a5f.png)
 
@@ -31,7 +31,7 @@ Most likely by the time you run these tests, the API token will have expired and
 
 Also just like the web automation above, you will need a unique username which you can simply put into the ***Username*** environment variable, which will then persist through all the tests dynamically.
 ### Running the collection
-To run the test suite you can just go to the collection and click the ***Run*** button on the top left
+To run the test suite you can just go to the collection and click the ***Run*** button on the top right:
 
 ![image](https://user-images.githubusercontent.com/49139851/180355711-097c9434-73ac-436e-8d4e-3a31a576fad7.png)
 
