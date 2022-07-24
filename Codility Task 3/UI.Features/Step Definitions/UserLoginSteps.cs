@@ -13,20 +13,18 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
     [Binding]
     public sealed class UserLoginSteps
     {
-        private SeleniumDriver seleniumDriver = null;
         private IWebDriver _driver;
         private HomePage homePageObject;
 
         public UserLoginSteps(ScenarioContext scenarioContext)
         {
-            seleniumDriver = scenarioContext.Get<SeleniumDriver>("seleniumDriver");
+            _driver = scenarioContext.Get<IWebDriver>("seleniumDriver");
         }
 
         [Given("User visits home page")]
         [When("User visits home page")]
         public void UserVisitsHomePage()
         {
-            _driver = seleniumDriver.Setup();
             _driver.Navigate().GoToUrl("https://responsivefight.herokuapp.com/");
             System.Threading.Thread.Sleep(2000);
             homePageObject = new HomePage(_driver);

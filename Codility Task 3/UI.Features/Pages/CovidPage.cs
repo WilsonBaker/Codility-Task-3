@@ -11,6 +11,9 @@ namespace Codility_Task_3.UI.Features.Pages
         [FindsBy(How = How.Id, Using = "welcome_text")]
         private IWebElement WelcomeText { get; set; }
 
+        [FindsBy(How = How.Id, Using = "news")]
+        private IWebElement EnterAtOwnRiskButton { get; set; }
+
 
         private readonly IWebDriver _driver;
 
@@ -18,6 +21,11 @@ namespace Codility_Task_3.UI.Features.Pages
         {
             _driver = driver;
             PageFactory.InitElements(_driver, this);
+        }
+
+        public void ClickEnterAtOwnRiskButton()
+        {
+            EnterAtOwnRiskButton.Click();
         }
 
     }

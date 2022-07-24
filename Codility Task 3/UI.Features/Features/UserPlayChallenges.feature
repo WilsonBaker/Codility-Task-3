@@ -1,4 +1,4 @@
-﻿@UIRegression
+﻿@UIRegression @UserChallenges
 Feature: UserPlayChallenges
 	Covers user playing the COVID multi-choice game after they have logged in
 
