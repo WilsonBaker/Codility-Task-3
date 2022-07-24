@@ -22,7 +22,8 @@ namespace Codility_Task_3
         public void BeforeScenario()
         {
             SeleniumDriver seleniumDriver = new SeleniumDriver(_scenarioContext);
-            _scenarioContext.Set(seleniumDriver, "seleniumDriver");
+            IWebDriver _driver = seleniumDriver.Setup();
+            _scenarioContext.Set(_driver, "seleniumDriver");
         }
 
         [AfterScenario]

@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -82,14 +84,12 @@ namespace Codility_Task_3.UI.Features.Pages
 
         public bool CheckLoginTitleIsDisplayedWithUsername(string givenUsername)
         {
+            // Wait for login title to be loaded with a timeout of 30 secs
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("user_txt")));
             // Check that login title has been displayed and also that the username text is correct
-            if (LoginTitle.Displayed == true && LoginTitleUsername.Text == givenUsername)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            var result = (LoginTitle.Displayed == true && LoginTitleUsername.Text == givenUsername) ? true : false;
+            return result;
         }
 
         public void ClickRegisterButton()
@@ -122,26 +122,20 @@ namespace Codility_Task_3.UI.Features.Pages
 
         public bool CheckLoginErrorDisplayed()
         {
-            if (LoginErrorPopup.Displayed == true && LoginErrorPopup.Text == "Wrong username or password")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            // Wait for error popup to be loaded with a timeout of 30 secs
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("login_popup")));
+            var result = (LoginErrorPopup.Displayed == true && LoginErrorPopup.Text == "Wrong username or password") ? true : false;
+            return result;
         }
 
         public bool CheckRegisterErrorDisplayed(string errorMessage)
         {
-            if (RegisterErrorPopup.Displayed == true && RegisterErrorPopup.Text == errorMessage)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            // Wait for error popup to be loaded with a timeout of 30 secs
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("popup")));
+            var result = (RegisterErrorPopup.Displayed == true && RegisterErrorPopup.Text == errorMessage) ? true : false;
+            return result;
         }
     }
 }
