@@ -83,12 +83,5 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             var result = homePageObject.CheckRegisterErrorDisplayed(errorMessage);
             Assert.IsTrue(result);
         }
-
-        [Given(@"User clicks start game button")]
-        [When(@"User clicks start game button")]
-        public void UserClicksStartGameButton()
-        {
-            homePageObject.ClickStartGameButton();
-        }
     }
 }
