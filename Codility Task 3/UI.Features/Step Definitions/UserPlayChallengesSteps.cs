@@ -30,17 +30,30 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             homePageObject.ClickStartGameButton();
         }
 
-        [When(@"Covid page loads")]
-        public void WhenUserSeesCovidPage()
+        [Given(@"User clicks Enter at your own risk button")]
+        public void GivenUserClicksEnterAtYourOwnRiskButton()
         {
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"User should see their username '(.*)' on the screen")]
-        public void ThenUserShouldSeeTheirUsernameOnTheScreen(string p0)
+        [Given(@"User clicks start button")]
+        public void GivenUserClicksStartButton()
         {
             ScenarioContext.Current.Pending();
         }
+
+        [When(@"User chooses correct answer")]
+        public void WhenUserChoosesCorrectAnswer()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"User should see message saying they are correct")]
+        public void ThenUserShouldSeeMessageSayingTheyAreCorrect()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }

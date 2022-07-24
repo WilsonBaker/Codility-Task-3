@@ -9,7 +9,9 @@ Background: Ensure user already logged in
 	And User submits the details
 	Then User should see successful login title with username 'WilsonBak'
 
-Scenario: User can see covid page after starting game
+Scenario: User plays game with correct answer
 	Given User clicks start game button
-	When Covid page loads
-	Then User should see their username 'WilsonBak' on the screen
+	And User clicks Enter at your own risk button
+	And User clicks start button
+	When User chooses correct answer
+	Then User should see message saying they are correct
