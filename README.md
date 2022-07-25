@@ -18,6 +18,10 @@ Because some of the tests deal with user creation (and you cannot create a user 
 
 ![image](https://user-images.githubusercontent.com/49139851/180346829-4eccb0c1-574d-4ddc-a0ca-45a8196e52be.png)
 
+Another one you will also most likely need to change is the auth token (due to it expiring every 3 days), simply copy and paste it into this variable if you want to test the leaderboard feature.
+
+![image](https://user-images.githubusercontent.com/49139851/180879493-49aa3b48-513a-4903-8870-2190dad77da9.png)
+
 ## API Automation
 To run the API automation you will need to first download [Postman](https://www.postman.com/downloads/). Then you can import the Postman JSON files which are inside the ***Postman*** folder by choosing this option in the top left:
 
