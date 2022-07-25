@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Codility_Task_3.Helpers;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,16 +20,25 @@ namespace Codility_Task_3.UI.Features.Step_Definitions
             _driver = scenarioContext.Get<IWebDriver>("seleniumDriver");
         }
 
-        [Given(@"User has a score on the leaderboard of '(.*)'")]
-        public void GivenUserHasAScoreOnTheLeaderboardOf(int p0)
+        [Given(@"User with username '(.*)' has a score on the leaderboard of '(.*)'")]
+        public void GivenUserHasAScoreOnTheLeaderboardOf(string username, int score)
         {
-            ScenarioContext.Current.Pending();
+            var result = LeaderboardHelper.CheckUserExists(username);
+            if (result)
+            {
+                //Update user with correct score regardless of if it's correct or not
+                LeaderboardHelper.UpdateUser(username, score);
+            } else
+            {
+                //Add user with correct score
+                LeaderboardHelper.AddUser(username, score);
+            }
         }
 
         [When(@"User visits leaderbaord page")]
         public void WhenUserVisitsLeaderbaordPage()
         {
-            ScenarioContext.Current.Pending();
+            _driver.Navigate().GoToUrl("https://responsivefight.herokuapp.com/leaderboard");
         }
 
         [Then(@"User should see their username '(.*)' and score of '(.*)'")]

@@ -1,4 +1,5 @@
-﻿Feature: UserLeaderboard
+﻿@UIRegression @UserLeaderboard
+Feature: UserLeaderboard
 	This covers when the user logs in and checks the leaderboard
 
 Background: User logs in
@@ -9,7 +10,7 @@ Background: User logs in
 	Then User should see successful login title with username 'WilsonBak'
 
 Scenario: User checks their score on the leaderboard
-	Given User has a score on the leaderboard of '5000'
+	Given User with username 'WilsonBak' has a score on the leaderboard of '0'
 	When User visits leaderbaord page
-	Then User should see their username 'WilsonBak' and score of '5000'
+	Then User should see their username 'WilsonBak' and score of '0'
 
